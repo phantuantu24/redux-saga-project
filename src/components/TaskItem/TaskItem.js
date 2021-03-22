@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardActions, CardContent, CardHeader, Fab, Grid, Icon } from '@material-ui/core';
+import { Card, CardActions, CardContent, Fab, Grid, Icon } from '@material-ui/core';
 import { withStyles } from '@material-ui/styles';
 import styles from './styles'
 
