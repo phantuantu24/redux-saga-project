@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { withStyles } from "@material-ui/styles";
-import { Button, Grid } from '@material-ui/core';
-import { Add as AddIcon } from '@material-ui/icons';
+import { Button, Grid, Icon } from '@material-ui/core';
 import { STATUSES } from '../../constants'
 import styles from "./styles";
 import TaskList from '../../components/TaskList/TaskList';
+import TaskForm from '../../components/TaskForm/TaskForm';
 
 const listTask = [
   {
@@ -28,6 +28,15 @@ const listTask = [
 ]
 class TaskBoard extends Component {
 
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+      open: false
+    }
+  }
+  
+
   renderBoard = () => {
     return (
       <Grid container spacing={2}>
@@ -43,17 +52,29 @@ class TaskBoard extends Component {
     )
   }
 
+  handleCloseForm = () => {
+    this.setState({
+      open: false
+    })
+  }
+
+  renderAddForm = () => {
+    const { open } = this.state
+    return <TaskForm open={open} onClose={this.handleCloseForm}/>
+  }
+
   render() {
     const { classes } = this.props
     return (
       <div className={classes.taskBoard}>
-        <Button variant="contained" color="secondary">
-          <AddIcon />
+        <Button variant="contained" color="secondary" onClick={() => this.setState({ open: true })}>
+          <Icon>add</Icon>
           Add New Task
         </Button>
         <div className={classes.taskContent}>
           {this.renderBoard()}
         </div>
+        {this.renderAddForm()}
       </div>
     );
   }
