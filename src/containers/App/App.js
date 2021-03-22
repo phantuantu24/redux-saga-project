@@ -6,7 +6,6 @@ import theme from "../../commons/Theme";
 
 class App extends Component {
   render() {
-    console.log(this.props)
     return (
       <ThemeProvider theme={theme}>
         <TaskBoard />

@@ -3,25 +3,28 @@ import { createMuiTheme } from "@material-ui//core/styles";
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main:  "#607D8B"
+      main:  "#448AFF"
     },
     secondary: {
-      main: "#795548"
+      main: "#3F51B5"
     },
     error: {
       main: "#D32F2F"
     }
   },
   typography: {
-    fontFamily: "sans-serif",
-    fontSize: 16
+    fontSize: 16,
+    fontWeight: "bold",
+    fontStyle: "Italic",
+    fontFamily: "sans-serif monospace"
   },
   shape: {
     borderRadius: 4,
     backgroundColor: "#7B1FA2",
     textColor: "#FFFFFF",
-    border: "#CCCCCC"
-  }
+    border: "#CCCCCC",
+    marginTop: 20
+  },
 })
 
 export default theme
