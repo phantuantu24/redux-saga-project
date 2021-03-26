@@ -27,6 +27,7 @@ Install SVG Icons
 ## Install [ESLint Plugin React](https://www.npmjs.com/package/eslint-plugin-react)
 
 ### `npm install eslint-plugin-react --save-dev`
+### `.eslintrc.js`
 
 ## Install [ESLint Config Airbnb](https://github.com/airbnb/javascript)
 
@@ -39,6 +40,7 @@ Install SVG Icons
 ## Install [ESLint Config Prettier](https://github.com/prettier/eslint-config-prettier)
 
 ### `npm install --save-dev eslint-config-prettier`
+### `.prettierrc`
 
 ## Install [Husky](https://typicode.github.io/husky)
 
