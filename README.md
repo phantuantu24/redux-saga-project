@@ -13,3 +13,9 @@ Install SVG Icons
 ### `<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />`
 ## Embed Font Icons
 ### `<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />`
+## Install ESLint
+### `npm install -g eslint`
+## Install ESLint Plugin React
+### `npm install eslint-plugin-react --save-dev`
+## Install ESLint Config Airbnb
+### `npm install eslint-config-airbnb`

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { withStyles } from "@material-ui/styles";
+import { withStyles } from '@material-ui/styles';
 import { Button, Grid, Icon } from '@material-ui/core';
 import { STATUSES } from '../../constants'
-import styles from "./styles";
+import styles from './styles';
 import TaskList from '../../components/TaskList/TaskList';
 import TaskForm from '../../components/TaskForm/TaskForm';
+import PropTypes from 'prop-types';
 
 const listTask = [
   {
@@ -30,21 +31,21 @@ class TaskBoard extends Component {
 
   constructor(props) {
     super(props)
-  
+
     this.state = {
       open: false
     }
   }
-  
+
 
   renderBoard = () => {
     return (
       <Grid container spacing={2}>
         {STATUSES.map((status) => {
           const taskFilter = listTask.filter(task => task.status === status.value)
-          return <TaskList 
+          return <TaskList
             key={status.value}
-            status={status} 
+            status={status}
             taskFilter={taskFilter}
           />
         })}
@@ -60,14 +61,20 @@ class TaskBoard extends Component {
 
   renderAddForm = () => {
     const { open } = this.state
-    return <TaskForm open={open} onClose={this.handleCloseForm}/>
+    return <TaskForm
+      open={open}
+      onClose={this.handleCloseForm}
+    />
   }
 
   render() {
     const { classes } = this.props
     return (
       <div className={classes.taskBoard}>
-        <Button variant="contained" color="secondary" onClick={() => this.setState({ open: true })}>
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={() => this.setState({ open: true })}>
           <Icon>add</Icon>
           Add New Task
         </Button>
@@ -78,6 +85,10 @@ class TaskBoard extends Component {
       </div>
     );
   }
+}
+
+TaskBoard.propTypes = {
+  classes: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(TaskBoard);
