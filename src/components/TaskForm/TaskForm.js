@@ -20,7 +20,7 @@ class TaskForm extends Component {
             multiline
             variant="outlined"
             className={classes.textField}
-          /><br/>
+          /><br />
           <TextField
             id="outlined-textarea"
             label="Description"
@@ -32,10 +32,16 @@ class TaskForm extends Component {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={onClose} color="primary">
+          <Button
+            onClick={onClose}
+            color="primary"
+          >
             Cancel
           </Button>
-          <Button onClick={onClose} color="primary">
+          <Button
+            onClick={onClose}
+            color="primary"
+          >
             Add
           </Button>
         </DialogActions>
