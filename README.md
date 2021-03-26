@@ -53,3 +53,13 @@ Install SVG Icons
 ## Install [Editor Config Extension](https://editorconfig.org/)
 
 ### `.editorconfig`
+
+## Install [Redux](https://www.npmjs.com/package/redux)
+
+### `npm install --save redux`
+## Install [React-Redux](https://www.npmjs.com/package/react-redux)
+
+### `npm install --save react-redux`
+## Install Middleware [Redux-Thunk](https://www.npmjs.com/package/redux-thunk)
+
+### `npm install --save redux-thunk`
