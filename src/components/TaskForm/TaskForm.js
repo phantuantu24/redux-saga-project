@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/styles';
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@material-ui/core';
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  TextField,
+} from '@material-ui/core';
 import styles from './styles';
 
 class TaskForm extends Component {
   render() {
-    const { open, classes, onClose } = this.props
+    const { open, classes, onClose } = this.props;
     return (
       <Dialog open={open} onClose={onClose} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Add New Task</DialogTitle>
@@ -20,7 +28,8 @@ class TaskForm extends Component {
             multiline
             variant="outlined"
             className={classes.textField}
-          /><br />
+          />
+          <br />
           <TextField
             id="outlined-textarea"
             label="Description"
@@ -32,16 +41,10 @@ class TaskForm extends Component {
           />
         </DialogContent>
         <DialogActions>
-          <Button
-            onClick={onClose}
-            color="primary"
-          >
+          <Button onClick={onClose} color="primary">
             Cancel
           </Button>
-          <Button
-            onClick={onClose}
-            color="primary"
-          >
+          <Button onClick={onClose} color="primary">
             Add
           </Button>
         </DialogActions>
