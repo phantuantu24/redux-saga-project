@@ -47,3 +47,7 @@ Install SVG Icons
 ## Install [Lint Staged](https://www.npmjs.com/package/lint-staged)
 
 ### `npm install --save-dev lint-staged`
+
+## Install [Editor Config Extension](https://editorconfig.org/)
+
+### `.editorconfig`
