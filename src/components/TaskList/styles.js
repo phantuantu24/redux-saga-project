@@ -4,8 +4,8 @@ const styles = (theme) => ({
     fontWeight: theme.typography.fontWeight,
     fontFamily: theme.typography.fontFamily,
     fontSize: theme.typography.fontSize,
-    color: theme.palette.primary.main
-  }
-})
+    color: theme.palette.primary.main,
+  },
+});
 
-export default styles
+export default styles;
