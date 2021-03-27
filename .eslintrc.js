@@ -31,6 +31,7 @@ module.exports = {
     'import/prefer-default-export': 0,
     'react/forbid-prop-types': 0,
     'no-undef': 0,
+    'class-methods-use-this': 0,
     // for prettier to display error about some rule
     'prettier/prettier': ['error'],
   },

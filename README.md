@@ -63,3 +63,7 @@ Install SVG Icons
 ## Install Middleware [Redux-Thunk](https://www.npmjs.com/package/redux-thunk)
 
 ### `npm install --save redux-thunk`
+
+## Install Http Library [Axios](https://github.com/axios/axios)
+
+### `npm install axios`
