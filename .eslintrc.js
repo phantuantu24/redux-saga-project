@@ -32,15 +32,20 @@ module.exports = {
     'react/forbid-prop-types': 0,
     'no-undef': 0,
     'class-methods-use-this': 0,
+    // 'no-console': { allow: ['warn', 'error'] },
+    'react/require-default-props': 1,
+    'no-undersocre-dangle': 0,
+    // 'no-unused-vars': 0,
+    // 'arrow-body-style': 0,
     // for prettier to display error about some rule
     'prettier/prettier': ['error'],
   },
   plugins: ['prettier'],
-  // env: {
-  //   "es6": true,
-  //   "browser": true,
-  //   "node": true
-  // }
+  env: {
+    es6: true,
+    browser: true,
+    node: true,
+  },
 };
 // 0/"off": off
 // 1/"warm": warm
