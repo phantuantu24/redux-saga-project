@@ -72,6 +72,6 @@ Install SVG Icons
 
 ### `npm install axios`
 
-## Install Toastify Library [Toastify](https://www.npmjs.com/package/react-toastify)
+## Install Redux-Saga [Redux-Saga](https://redux-saga.js.org/docs/introduction/GettingStarted, https://github.com/redux-saga/redux-saga)
 
-### `npm i react-toastify`
+### `npm install redux-saga`
