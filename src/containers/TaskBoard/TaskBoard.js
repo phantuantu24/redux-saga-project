@@ -1,8 +1,9 @@
-import { Button, Grid, Icon } from '@material-ui/core';
+import { Box, Button, Grid, Icon } from '@material-ui/core';
 import { withStyles } from '@material-ui/styles';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { toast } from 'react-toastify';
 import { bindActionCreators } from 'redux';
 import * as taskActions from '../../actions/task';
 import TaskForm from '../../components/TaskForm/TaskForm';
@@ -57,6 +58,10 @@ class TaskBoard extends Component {
     return <TaskForm open={open} onClose={this.handleCloseForm} />;
   };
 
+  showToast = () => {
+    toast.success('successfully');
+  };
+
   render() {
     const { classes } = this.props;
     return (
@@ -69,6 +74,11 @@ class TaskBoard extends Component {
           <Icon>add</Icon>
           Add New Task
         </Button>
+        <Box ml="1">
+          <Button variant="contained" color="primary" onClick={this.showToast}>
+            Display Toast
+          </Button>
+        </Box>
         <div className={classes.taskContent}>{this.renderBoard()}</div>
         {this.renderAddForm()}
       </div>
