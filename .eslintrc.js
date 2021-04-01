@@ -35,7 +35,7 @@ module.exports = {
     // 'no-console': { allow: ['warn', 'error'] },
     'react/require-default-props': 1,
     'no-undersocre-dangle': 0,
-    'no-unused-vars': 0,
+    'no-unused-vars': 1,
     // 'no-case-declarations': 0,
     // 'arrow-body-style': 0,
     // for prettier to display error about some rule
