@@ -27,6 +27,7 @@ Install SVG Icons
 ## Install [ESLint Plugin React](https://www.npmjs.com/package/eslint-plugin-react)
 
 ### `npm install eslint-plugin-react --save-dev`
+
 ### `.eslintrc.js`
 
 ## Install [ESLint Config Airbnb](https://github.com/airbnb/javascript)
@@ -40,6 +41,7 @@ Install SVG Icons
 ## Install [ESLint Config Prettier](https://github.com/prettier/eslint-config-prettier)
 
 ### `npm install --save-dev eslint-config-prettier`
+
 ### `.prettierrc`
 
 ## Install [Husky](https://typicode.github.io/husky)
@@ -57,9 +59,11 @@ Install SVG Icons
 ## Install [Redux](https://www.npmjs.com/package/redux)
 
 ### `npm install --save redux`
+
 ## Install [React-Redux](https://www.npmjs.com/package/react-redux)
 
 ### `npm install --save react-redux`
+
 ## Install Middleware [Redux-Thunk](https://www.npmjs.com/package/redux-thunk)
 
 ### `npm install --save redux-thunk`
@@ -67,3 +71,7 @@ Install SVG Icons
 ## Install Http Library [Axios](https://github.com/axios/axios)
 
 ### `npm install axios`
+
+## Install Toastify Library [Toastify](https://www.npmjs.com/package/react-toastify)
+
+### `npm i react-toastify`
