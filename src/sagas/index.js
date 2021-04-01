@@ -1,9 +1,17 @@
-import { fork } from 'redux-saga/effects';
+import { fork, take, call } from 'redux-saga/effects';
+import * as Types from '../constants/task';
+import { getList } from '../apis/task';
+import { STATUS_CODE } from '../constants/index';
 
 function* watchFetchListTaskAction() {
-  yield true;
-  // eslint-disable-next-line no-console
-  console.log('watching fetch list task');
+  yield take(Types.FETCH_TASK);
+  const resp = yield call(getList);
+  const { status } = resp;
+  if (status === STATUS_CODE.SUCCESS) {
+    // dispatch action fetListTaskSuccess
+  } else {
+    // dispatch fetListTaskFailed
+  }
 }
 function* watchCareateTaskAction() {
   yield true;
@@ -17,3 +25,6 @@ function* rootSaga() {
 }
 
 export default rootSaga;
+
+// fork as if-else or switch-case
+// code line under of 'take' key are implemented whenever action is dispatched

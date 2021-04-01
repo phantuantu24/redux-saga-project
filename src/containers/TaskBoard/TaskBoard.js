@@ -22,7 +22,7 @@ class TaskBoard extends Component {
 
   componentDidMount() {
     const { taskActionCreators } = this.props;
-    taskActionCreators.fetchTaskListRequest();
+    taskActionCreators.fetchListTask();
   }
 
   renderBoard = () => {
