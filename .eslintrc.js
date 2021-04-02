@@ -33,7 +33,7 @@ module.exports = {
     'no-undef': 0,
     'class-methods-use-this': 0,
     // 'no-console': { allow: ['warn', 'error'] },
-    'react/require-default-props': 1,
+    'react/require-default-props': 0,
     'no-undersocre-dangle': 0,
     'no-unused-vars': 1,
     // 'no-case-declarations': 0,

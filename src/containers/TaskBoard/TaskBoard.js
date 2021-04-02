@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as taskActions from '../../actions/task';
+import SearchBox from '../../components/SearchBox/SearchBox';
 import TaskForm from '../../components/TaskForm/TaskForm';
 import TaskList from '../../components/TaskList/TaskList';
 import { STATUSES } from '../../constants';
@@ -62,6 +63,14 @@ class TaskBoard extends Component {
     taskActionCreators.fetchListTask();
   };
 
+  handleFilter = (e) => {
+    const { value } = e.target;
+    const { taskActionCreators } = this.props;
+    taskActionCreators.filterTask(value);
+  };
+
+  renderSearchBox = () => <SearchBox handleChange={this.handleFilter} />;
+
   render() {
     const { classes } = this.props;
     return (
@@ -82,6 +91,7 @@ class TaskBoard extends Component {
           <Icon>add</Icon>
           Add New Task
         </Button>
+        {this.renderSearchBox()}
         <div className={classes.taskContent}>{this.renderBoard()}</div>
         {this.renderAddForm()}
       </div>
@@ -92,6 +102,7 @@ class TaskBoard extends Component {
 TaskBoard.propTypes = {
   classes: PropTypes.object.isRequired,
   listTask: PropTypes.array.isRequired,
+  filterTask: PropTypes.func,
 };
 
 const mapStateToProps = (state) => ({

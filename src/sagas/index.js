@@ -1,5 +1,17 @@
-import { call, fork, put, take, delay } from 'redux-saga/effects';
-import { fetchListTaskFailed, fetchListTaskSuccess } from '../actions/task';
+import {
+  call,
+  fork,
+  put,
+  take,
+  delay,
+  takeLatest,
+  select,
+} from 'redux-saga/effects';
+import {
+  fetchListTaskFailed,
+  fetchListTaskSuccess,
+  filterTaskSuccess,
+} from '../actions/task';
 import { hideLoadiog, showLoadiog } from '../actions/ui';
 import { getList } from '../apis/task';
 import { STATUS_CODE } from '../constants/index';
@@ -31,16 +43,20 @@ function* watchFetchListTaskAction() {
   }
 }
 
-function* watchCareateTaskAction() {
-  yield true;
-  // eslint-disable-next-line no-console
-  console.log('watching create task');
+function* filterTaskSaga({ payload }) {
+  yield delay(500);
+  const { keyword } = payload;
+  const list = yield select((state) => state.task.listTask);
+  const filterTask = list.filter((task) =>
+    task.title.trim().toLowerCase().includes(keyword.trim().toLowerCase()),
+  );
+  yield put(filterTaskSuccess(filterTask));
 }
 
 function* rootSaga() {
   // non - blocking
   yield fork(watchFetchListTaskAction);
-  yield fork(watchCareateTaskAction);
+  yield takeLatest(Types.FILTER_TASK, filterTaskSaga);
 }
 
 export default rootSaga;
@@ -50,3 +66,6 @@ export default rootSaga;
 // function will be called through 'call' keywarod
 // action will be called by 'put' keyword
 // everything will be delay by 'delay' keyword
+// 'takeLatest(actionType, generator function)' key word instead of take and forks, execute and get result of latest action, if we need to keep user's action
+// 'takeEvery(actionType, generator function)' key word instead of take and forks, execute immediately if active, don't care the before action finished or not
+// 'select' keyword to get data from store of saga
