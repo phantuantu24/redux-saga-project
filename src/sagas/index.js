@@ -1,5 +1,6 @@
-import { call, fork, put, take } from 'redux-saga/effects';
+import { call, fork, put, take, delay } from 'redux-saga/effects';
 import { fetchListTaskFailed, fetchListTaskSuccess } from '../actions/task';
+import { hideLoadiog, showLoadiog } from '../actions/ui';
 import { getList } from '../apis/task';
 import { STATUS_CODE } from '../constants/index';
 import * as Types from '../constants/task';
@@ -14,7 +15,8 @@ import * as Types from '../constants/task';
 function* watchFetchListTaskAction() {
   while (true) {
     yield take(Types.FETCH_TASK);
-    // blocking
+    // blocking then show loading before call api
+    yield put(showLoadiog());
     const resp = yield call(getList);
     const { data, status } = resp;
     if (status === STATUS_CODE.SUCCESS) {
@@ -22,6 +24,10 @@ function* watchFetchListTaskAction() {
     } else {
       yield put(fetchListTaskFailed(data));
     }
+    // delay before close loading bar
+    yield delay(1000);
+    // close loading bar
+    yield put(hideLoadiog());
   }
 }
 
@@ -43,3 +49,4 @@ export default rootSaga;
 // code line under of 'take' key are implemented whenever action is dispatched
 // function will be called through 'call' keywarod
 // action will be called by 'put' keyword
+// everything will be delay by 'delay' keyword
